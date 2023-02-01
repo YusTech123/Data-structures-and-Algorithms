@@ -1,0 +1,74 @@
+using System;
+
+namespace Sorting
+{
+    class BubbleSort
+    {
+        public static void Sort(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+    }
+
+    class Testing
+    {
+        static void Main(string[] args)
+        {
+            int[] arr1 = { 64, 34, 25, 12, 22, 11, 90 };
+            int[] arr2 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] arr3 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            int[] arr4 = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+            int[] arr5 = { 38, 27, 43, 3, 9, 82, 10 };
+
+            Console.WriteLine("Before sorting array 1: ");
+            PrintArray(arr1);
+            BubbleSort.Sort(arr1);
+            Console.WriteLine("After sorting array 1: ");
+            PrintArray(arr1);
+
+            Console.WriteLine("Before sorting array 2: ");
+            PrintArray(arr2);
+            BubbleSort.Sort(arr2);
+            Console.WriteLine("After sorting array 2: ");
+            PrintArray(arr2);
+
+            Console.WriteLine("Before sorting array 3: ");
+            PrintArray(arr3);
+            BubbleSort.Sort(arr3);
+            Console.WriteLine("After sorting array 3: ");
+            PrintArray(arr3);
+
+            Console.WriteLine("Before sorting array 4: ");
+            PrintArray(arr4);
+            BubbleSort.Sort(arr4);
+            Console.WriteLine("After sorting array 4: ");
+            PrintArray(arr4);
+
+            Console.WriteLine("Before sorting array 5: ");
+            PrintArray(arr5);
+            BubbleSort.Sort(arr5);
+            Console.WriteLine("After sorting array 5: ");
+            PrintArray(arr5);
+        }
+
+        static void PrintArray(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n; ++i)
+                Console.Write(arr[i] + " ");
+            Console.WriteLine();
+        }
+    }
+}
